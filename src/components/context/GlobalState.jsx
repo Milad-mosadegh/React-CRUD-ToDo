@@ -23,8 +23,8 @@ export const GlobalProvider = ({ children }) => {
     const [state, dispatch] = useReducer(AppReducer, initialState)
 
     return (
-        <GlobalProvider value={{ users: state.users }}>
+        <GlobalContext.Provider value={{ users: state.users }}>
             {children}
-        </GlobalProvider>
+        </GlobalContext.Provider>
     )
 }

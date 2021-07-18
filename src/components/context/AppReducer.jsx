@@ -1,9 +1,8 @@
 export default (state, action) => {
-    switch (key) {
+    switch (action.type) {
 
 
         default:
-            return state
-            break;
+            return state;
     }
 }
