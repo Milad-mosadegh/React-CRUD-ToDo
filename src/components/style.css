@@ -1,0 +1,10 @@
+.isCenter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+strong{
+    font-size: 25px;
+}

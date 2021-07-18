@@ -32,7 +32,7 @@ function EditUser(props) {
         history.push('/')
     }
     return (
-        <div className="vh-100 bg-dark">
+        <div className="isCenter vh-100 bg-dark">
             <Form className="container shadow p-5" onSubmit={submitHandler}>
                 <FormGroup className="mb-2">
                     <Label>Name</Label>

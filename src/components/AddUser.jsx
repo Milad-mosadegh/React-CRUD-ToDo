@@ -26,11 +26,11 @@ function AddUser() {
         history.push('/')
     }
     return (
-        <div className=" bg-dark vh-100">
-            <Form className="container " onSubmit={submitHandler}>
+        <div className="isCenter bg-dark vh-100">
+            <h1 className="text-light display-4">You can add your info here</h1>
+            <Form className="container shadow p-5 mt-4 " onSubmit={submitHandler}>
                 <FormGroup className="mb-2">
-                    <Label>Name</Label>
-                    <Input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Enter Your Name" />
+                    <Input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Enter Your wishes" />
                 </FormGroup>
                 <Button>Submit</Button>
                 <Link className="btn btn-danger" to="/">Cancel</Link>
