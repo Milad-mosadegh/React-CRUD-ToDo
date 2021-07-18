@@ -10,17 +10,19 @@ import {
 } from 'reactstrap'
 
 function UserList() {
-    const { users } = useContext(GlobalContext)
+    const { users, removeUser } = useContext(GlobalContext)
     console.log(users);
     return (
         <ListGroup className="mt-1">
-            <ListGroupItem className="d-flex justify-content-between">
-                <strong>User One</strong>
-                <div className="ml-auto">
-                    <Link className="btn btn-warning mr-2" to="/edit/1">Edit</Link>
-                    <Button color="danger">Delete</Button>
-                </div>
-            </ListGroupItem>
+            {users.map(result => (
+                <ListGroupItem key={result.id} className="d-flex justify-content-between">
+                    <strong>{result.name}</strong>
+                    <div className="ml-auto">
+                        <Link className="btn btn-warning mr-2" to={`/edit/${result.id}`}>Edit</Link>
+                        <Button onClick={() => removeUser(result.id)} color="danger">Delete</Button>
+                    </div>
+                </ListGroupItem>
+            ))}
         </ListGroup>
     )
 }

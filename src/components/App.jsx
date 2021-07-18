@@ -13,15 +13,15 @@ import Home from './Home'
 
 function App() {
     return (
-        <div >
+        <div className="container">
             <GlobalProvider>
                 <Router>
                     {/* Here is For Navbar */}
 
                     <Switch>
                         <Route path="/" exact component={Home} />
-                        <Route path="/adduser" exact component={AddUser} />
-                        <Route path="/edituser" exact component={EditUser} />
+                        <Route path="/add" exact component={AddUser} />
+                        <Route path="/edit" exact component={EditUser} />
                     </Switch>
                 </Router>
             </GlobalProvider>
