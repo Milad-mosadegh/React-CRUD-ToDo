@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/style.css"],"names":[],"mappings":"AAAA,UACI,YAAa,CACb,qBAAsB,CACtB,sBAAuB,CACvB,kBACJ,CAEA,OACI,cACJ","file":"main.e2fa56ca.chunk.css","sourcesContent":[".isCenter{\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n}\n\nstrong{\n    font-size: 25px;\n}"]}
