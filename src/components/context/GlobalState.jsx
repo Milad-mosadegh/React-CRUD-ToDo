@@ -5,11 +5,7 @@ import AppReducer from './AppReducer'
 // Make Initial State
 
 const initialState = {
-    users: [
-        { id: 1, name: "Milad" },
-        { id: 2, name: "Nima" },
-        { id: 3, name: "Hessam" },
-    ]
+    users: []
 }
 
 
@@ -39,11 +35,20 @@ export const GlobalProvider = ({ children }) => {
         })
     }
 
+
+    // Make Action for Edit UserList
+    const editUser = (user) => {
+        dispatch({
+            type: 'EDIT_USER',
+            payload: user
+        })
+    }
     return (
         <GlobalContext.Provider value={{
             users: state.users,
             removeUser,
-            addUser
+            addUser,
+            editUser
         }}>
             {children}
         </GlobalContext.Provider>

@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { GlobalContext } from './context/GlobalState'
+import { v4 as uuid } from 'uuid'
 
 import {
     Form,
@@ -12,13 +13,14 @@ import {
 
 
 function AddUser() {
+    const [name, setName] = useState('')
     const { addUser } = useContext(GlobalContext)
     const history = useHistory()
 
     const submitHandler = () => {
         const newUser = {
-            id: 4,
-            name: "Ali"
+            id: uuid(),
+            name
         }
         addUser(newUser)
         history.push('/')
@@ -28,7 +30,7 @@ function AddUser() {
             <Form onSubmit={submitHandler}>
                 <FormGroup className="mb-2">
                     <Label>Name</Label>
-                    <Input type="text" placeholder="Enter Your Name" />
+                    <Input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Enter Your Name" />
                 </FormGroup>
                 <Button>Submit</Button>
                 <Link className="btn btn-danger" to="/">Cancel</Link>

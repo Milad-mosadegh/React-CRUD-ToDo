@@ -1,5 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useState, useEffect } from 'react'
+import { Link, useHistory } from 'react-router-dom'
+import { GlobalContext } from './context/GlobalState'
+
 import {
     Form,
     FormGroup,
@@ -8,13 +10,33 @@ import {
     Button
 } from 'reactstrap'
 
-function EditUser() {
+function EditUser(props) {
+    const [selectedUser, setSelectedUser] = useState({
+        id: "",
+        name: ""
+    })
+
+    const currentUserId = props.match.params.id
+    const { editUser, users } = useContext(GlobalContext)
+    const history = useHistory()
+
+    useEffect(() => {
+        const userId = currentUserId
+        const selectedUser = users.find(user => user.id === userId)
+        setSelectedUser(selectedUser)
+    }, [currentUserId, users])
+
+
+    const submitHandler = () => {
+        editUser(selectedUser)
+        history.push('/')
+    }
     return (
         <div className="container">
-            <Form>
+            <Form onSubmit={submitHandler}>
                 <FormGroup className="mb-2">
                     <Label>Name</Label>
-                    <Input type="text" placeholder="Enter Your Name" />
+                    <Input name="name" value={selectedUser.name} onChange={(e) => setSelectedUser({ ...selectedUser, [e.target.name]: e.target.value })} type="text" placeholder="Enter Your Name" />
                 </FormGroup>
                 <Button>Edit Name</Button>
                 <Link className="btn btn-danger" to="/">Cancel</Link>
