@@ -20,8 +20,8 @@ function App() {
 
                     <Switch>
                         <Route path="/" exact component={Home} />
-                        <Route path="/add" exact component={AddUser} />
-                        <Route path="/edit/:id" exact component={EditUser} />
+                        <Route path="/add" component={AddUser} />
+                        <Route path="/edit/:id" component={EditUser} />
                     </Switch>
                 </Router>
             </GlobalProvider>
