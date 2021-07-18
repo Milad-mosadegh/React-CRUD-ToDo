@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {
     Form,
     FormGroup,
@@ -9,13 +10,14 @@ import {
 
 function EditUser() {
     return (
-        <div>
+        <div className="container">
             <Form>
-                <FormGroup>
+                <FormGroup className="mb-2">
                     <Label>Name</Label>
                     <Input type="text" placeholder="Enter Your Name" />
-                    <Button>Edit Name</Button>
                 </FormGroup>
+                <Button>Edit Name</Button>
+                <Link className="btn btn-danger" to="/">Cancel</Link>
             </Form>
         </div>
     )

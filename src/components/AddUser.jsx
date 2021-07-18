@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import {
     Form,
@@ -11,13 +12,14 @@ import {
 
 function AddUser() {
     return (
-        <div>
+        <div className="container">
             <Form>
-                <FormGroup>
+                <FormGroup className="mb-2">
                     <Label>Name</Label>
                     <Input type="text" placeholder="Enter Your Name" />
-                    <Button>Submit</Button>
                 </FormGroup>
+                <Button>Submit</Button>
+                <Link className="btn btn-danger" to="/">Cancel</Link>
             </Form>
         </div>
     )
