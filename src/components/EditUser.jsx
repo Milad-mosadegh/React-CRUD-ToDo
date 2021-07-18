@@ -32,8 +32,8 @@ function EditUser(props) {
         history.push('/')
     }
     return (
-        <div className="container">
-            <Form onSubmit={submitHandler}>
+        <div className="vh-100 bg-dark">
+            <Form className="container shadow p-5" onSubmit={submitHandler}>
                 <FormGroup className="mb-2">
                     <Label>Name</Label>
                     <Input name="name" value={selectedUser.name} onChange={(e) => setSelectedUser({ ...selectedUser, [e.target.name]: e.target.value })} type="text" placeholder="Enter Your Name" />

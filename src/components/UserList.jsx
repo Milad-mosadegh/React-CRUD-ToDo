@@ -15,10 +15,10 @@ function UserList() {
     return (
         <ListGroup className="mt-1">
             {users.map(result => (
-                <ListGroupItem key={result.id} className="d-flex justify-content-between">
+                <ListGroupItem key={result.id} className="d-flex justify-content-between shadow m-3 p-3">
                     <strong>{result.name}</strong>
                     <div className="ml-auto">
-                        <Link className="btn btn-warning mr-2" to={`/edit/${result.id}`}>Edit</Link>
+                        <Link className="btn btn-warning" to={`/edit/${result.id}`}>Edit</Link>
                         <Button onClick={() => removeUser(result.id)} color="danger">Delete</Button>
                     </div>
                 </ListGroupItem>

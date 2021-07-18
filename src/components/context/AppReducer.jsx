@@ -17,7 +17,7 @@ export default (state, action) => {
                 if (x.id === updateUser.id) {
                     return updateUser
                 }
-                return user
+                return x
             })
             return {
                 users: updateUsers

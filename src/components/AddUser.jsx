@@ -26,8 +26,8 @@ function AddUser() {
         history.push('/')
     }
     return (
-        <div className="container">
-            <Form onSubmit={submitHandler}>
+        <div className=" bg-dark vh-100">
+            <Form className="container " onSubmit={submitHandler}>
                 <FormGroup className="mb-2">
                     <Label>Name</Label>
                     <Input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Enter Your Name" />

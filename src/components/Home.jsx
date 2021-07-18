@@ -4,9 +4,11 @@ import UserList from './UserList'
 
 function Home() {
     return (
-        <div className="container">
-            <Header />
-            <UserList />
+        <div className="bg-dark vh-100">
+            <div className="container">
+                <Header />
+                <UserList />
+            </div>
         </div>
     )
 }

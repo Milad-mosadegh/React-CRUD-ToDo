@@ -13,7 +13,7 @@ import Home from './Home'
 
 function App() {
     return (
-        <div className="container">
+        <div >
             <GlobalProvider>
                 <Router>
                     {/* Here is For Navbar */}
