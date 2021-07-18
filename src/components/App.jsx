@@ -1,6 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import { GlobalProvider } from './context/GlobalState'
 
 
