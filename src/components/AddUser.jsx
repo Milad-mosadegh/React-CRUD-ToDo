@@ -1,5 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link, useHistory } from 'react-router-dom'
+import { GlobalContext } from './context/GlobalState'
 
 import {
     Form,
@@ -11,9 +12,20 @@ import {
 
 
 function AddUser() {
+    const { addUser } = useContext(GlobalContext)
+    const history = useHistory()
+
+    const submitHandler = () => {
+        const newUser = {
+            id: 4,
+            name: "Ali"
+        }
+        addUser(newUser)
+        history.push('/')
+    }
     return (
         <div className="container">
-            <Form>
+            <Form onSubmit={submitHandler}>
                 <FormGroup className="mb-2">
                     <Label>Name</Label>
                     <Input type="text" placeholder="Enter Your Name" />
